@@ -1,0 +1,27 @@
+.ctn {
+  height: 87vh;
+}
+
+.menuApp {
+  padding: 5px 0;
+  background: #97D2C3;
+}
+
+.menuApp a {
+  color: white;
+  font-size: 10px;
+  text-align: center;
+}
+
+.menuApp i {
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.button {
+  background: #97D2C3;
+}
+
+.button:hover, .button:active {
+  background: #82b5a8;
+}
