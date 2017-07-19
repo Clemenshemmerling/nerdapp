@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+
+  app:
+    image: nginx
+    volumes:
+      - ./app:/usr/share/nginx/html
+    ports:
+      - "80:80"
+
+  node:
+    build: ./node
+    volumes:
+      - ./node:/nodeapp
+    ports:
+      - "3000:3000"
