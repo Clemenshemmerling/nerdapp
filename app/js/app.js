@@ -9,8 +9,7 @@ var config = {
 firebase.initializeApp(config);
 
 var db = firebase.database(),
-    auth = firebase.auth(),
-    provider = new firebase.auth.GoogleAuthProvider()
+    auth = firebase.auth()
 
   var app = new Vue({
   el: '.container',
@@ -27,19 +26,47 @@ var db = firebase.database(),
       const email = $('#email').val()
       const pass = $('#passwd').val()
       const auth = firebase.auth()
-      // registrarse
+      // Login
       const promise = auth.signInWithEmailAndPassword(email, pass)
       promise.catch(e => console.log(e.message))
+    },
+    signin: function () {
+      // obtener email y password
+      const email = $('#email').val()
+      const pass = $('#passwd').val()
+      const auth = firebase.auth()
+      // registrarse
+      const promise = auth.createUserWithEmailAndPassword(email, pass)
+      promise.catch(e => console.log(e.message))
+      this.$nextTick(function () {
+        firebase.auth().onAuthStateChanged(firebaseUser => {
+            if (firebaseUser) {
+              console.log(firebaseUser)
+            } else {
+              console.log('not logged in')
+            }
+        })
+      })
+    },
+    appAuth: function () {
+      // Add a realtieme listener
+      firebase.auth().onAuthStateChanged(firebaseUser => {
+          if (firebaseUser) {
+            console.log(firebaseUser)
+          } else {
+            console.log('not logged in')
+          }
+      })
     }
   },
   mounted: function () {
     $(document).foundation()
-    auth.onAuthStateChanged(function(user) {
-      if (user) {
-        console.log(user);
-      } else {
-        console.warn('no conectado');
-      }
-    });
-  },
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+        if (firebaseUser) {
+          console.log(firebaseUser)
+        } else {
+          console.log('not logged in')
+        }
+    })
+  }
 })
