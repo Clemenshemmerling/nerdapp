@@ -11,7 +11,7 @@ firebase.initializeApp(config);
 var db = firebase.database(),
     auth = firebase.auth()
 
-  var app = new Vue({
+var app = new Vue({
   el: '.container',
   data: {
     autentificado: false,
@@ -61,12 +61,6 @@ var db = firebase.database(),
   },
   mounted: function () {
     $(document).foundation()
-    firebase.auth().onAuthStateChanged(firebaseUser => {
-        if (firebaseUser) {
-          console.log(firebaseUser)
-        } else {
-          console.log('not logged in')
-        }
-    })
+    this.appAuth()
   }
 })
