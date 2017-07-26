@@ -15,7 +15,7 @@
       <div class="container">
         <div class="row small-6 align-middle align-center ctn" id="login" v-show="loginP == true">
           <form class="log-in-form">
-            <h4 class="text-center">Log in with you email account</h4>
+            <h4 class="text-center">Inicia seseion tu con correo<h4>
             <label>Email
               <input type="email" placeholder="somebody@example.com" id="email">
             </label>
@@ -25,13 +25,14 @@
             <input id="show-password" type="checkbox"><label for="show-password">Show password</label>
             <div class="row small-12 align-center">
                 <div class="column small-6">
-                  <p><input class="button expanded" value="Log in" id="login" @click="login"></input></p>
+                  <p class="button expanded" id="login" @click="login">Log in</p>
                 </div>
                 <div class="column small-6">
-                  <p><input class="button expanded secondary" value="Sign in" id="signin" @click="signin"></input></p>
+                  <p class="button expanded secondary" id="signin" @click="signin">Sign in</p>
                 </div>
             </div>
-            <p class="text-center"><a href="#">Forgot your password?</a></p>
+            <p class="button expanded fb" id="fbBtn" @click="fblogin">Facebook</p>
+            <p class="button expanded Gm" id="gBtn" @click="Glogin">Gmail</p>
           </form>
         </div>
         <div class="row small-12 ctn align-middle align-center" id="nuevaPartida" v-show="autentificado == true">

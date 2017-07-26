@@ -4,6 +4,22 @@
   border-radius: 0;
 }
 
+.fb {
+  background: #3B5998 !important;
+}
+
+.fb:hover {
+  background: #2b4170 !important;
+}
+
+.Gm {
+  background: #4285f4 !important;
+}
+
+.Gm:hover {
+  background: #4285f4 !important;
+}
+
 .ctn {
   height: 83vh;
 }

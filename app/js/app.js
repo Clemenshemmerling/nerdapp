@@ -22,6 +22,48 @@ var app = new Vue({
 
   },
   methods: {
+    fblogin: function () {
+      const provider = new firebase.auth.FacebookAuthProvider();
+      firebase.auth().signInWithPopup(provider).then(function(result) {
+        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        const token = result.credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        // ...
+        console.log(provider)
+      }).catch(function(error) {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        const credential = error.credential;
+        // ...
+        console.log(error)
+      });
+    },
+    Glogin: function () {
+      // Login
+      const provider = new firebase.auth.GoogleAuthProvider();
+      firebase.auth().signInWithPopup(provider).then(function(result) {
+       // This gives you a Google Access Token. You can use it to access the Google API.
+       const token = result.credential.accessToken;
+       // The signed-in user info.
+       const user = result.user;
+       // ...
+       console.log(provider)
+     }).catch(function(error) {
+       // Handle Errors here.
+       const errorCode = error.code;
+       const errorMessage = error.message;
+       // The email of the user's account used.
+       const email = error.email;
+       // The firebase.auth.AuthCredential type that was used.
+       const credential = error.credential;
+       // ...
+     });
+    },
     login: function () {
       // obtener email y password
       const email = $('#email').val()
@@ -39,9 +81,6 @@ var app = new Vue({
       // registrarse
       const promise = auth.createUserWithEmailAndPassword(email, pass)
       promise.catch(e => console.log(e.message))
-      this.$nextTick(function () {
-        this.appAuth()
-      })
     },
     appAuth: function () {
       // Add a realtieme listener
