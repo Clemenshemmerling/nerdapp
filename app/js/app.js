@@ -14,8 +14,9 @@ var db = firebase.database(),
 var app = new Vue({
   el: '.container',
   data: {
+    loginP: true,
     autentificado: false,
-    activeUser : null
+    activeUser : []
   },
   computed: {
 
@@ -39,13 +40,7 @@ var app = new Vue({
       const promise = auth.createUserWithEmailAndPassword(email, pass)
       promise.catch(e => console.log(e.message))
       this.$nextTick(function () {
-        firebase.auth().onAuthStateChanged(firebaseUser => {
-            if (firebaseUser) {
-              console.log(firebaseUser)
-            } else {
-              console.log('not logged in')
-            }
-        })
+        this.appAuth()
       })
     },
     appAuth: function () {
@@ -53,6 +48,9 @@ var app = new Vue({
       firebase.auth().onAuthStateChanged(firebaseUser => {
           if (firebaseUser) {
             console.log(firebaseUser)
+            this.loginP = false
+            this.autentificado = true
+            this.activeUser.push({firebaseUser})
           } else {
             console.log('not logged in')
           }
