@@ -16,7 +16,7 @@ var app = new Vue({
   data: {
     loginP: true,
     autentificado: false,
-    activeUser : []
+    activeUser : null
   },
   computed: {
 
@@ -82,6 +82,15 @@ var app = new Vue({
       const promise = auth.createUserWithEmailAndPassword(email, pass)
       promise.catch(e => console.log(e.message))
     },
+    signOut: function () {
+      firebase.auth().signOut().then(function() {
+        // Sign-out successful.
+        console.log(desconectado)
+      }, function(error) {
+        // An error happened.
+        console.log(error)
+      });
+    },
     appAuth: function () {
       // Add a realtieme listener
       firebase.auth().onAuthStateChanged(firebaseUser => {
@@ -89,9 +98,12 @@ var app = new Vue({
             console.log(firebaseUser)
             this.loginP = false
             this.autentificado = true
-            this.activeUser.push({firebaseUser})
+            this.activeUser = firebaseUser
           } else {
             console.log('not logged in')
+            this.loginP = false
+            this.autentificado = false
+            this.activeUser = null
           }
       })
     }
