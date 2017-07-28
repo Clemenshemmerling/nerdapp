@@ -16,6 +16,8 @@ var app = new Vue({
   data: {
     loginP: true,
     autentificado: false,
+    partida: true,
+    perfil: false,
     activeUser : null
   },
   computed: {
@@ -106,6 +108,9 @@ var app = new Vue({
             this.activeUser = null
           }
       })
+    },
+    profile: function () {
+
     }
   },
   mounted: function () {

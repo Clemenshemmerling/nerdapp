@@ -14,7 +14,7 @@
   <body>
       <div class="container">
         <div class="row small-12 medium-8 align-middle align-center ctn" id="login" v-show="loginP == true">
-          <form class="log-in-form small-10 medium-8">
+          <form class="log-in-form small-10 medium-6">
             <h4 class="text-center">Inicia seseion tu con correo<h4>
             <label>Email
               <input type="email" placeholder="somebody@example.com" id="email">
@@ -38,6 +38,9 @@
         <div class="logCtn" v-show="autentificado == true">
           <div class="row small-12 ctn align-middle align-center" id="nuevaPartida">
             <button type="button" name="button" class="button">Nueva partida</button>
+          </div>
+          <div class="profileCtn">
+            
           </div>
           <div class="row menu align-bottom align-center small-12 menuApp">
             <ul class="menu">
@@ -68,7 +71,7 @@
               </a></li>
             </ul>
           </div>
-          </div>
+        </div>
       </div>
     <script src="js/vendor/firebase.js"></script>
     <script src="js/vendor/jquery.js"></script>
