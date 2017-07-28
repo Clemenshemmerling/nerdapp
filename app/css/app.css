@@ -26,12 +26,15 @@
 }
 
 .ctn {
-  height: 83vh;
+  min-height: 83vh;
 }
 
 .menuApp {
   padding: 5px 0;
   background: #97D2C3;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 
 .menuApp a {
