@@ -104,7 +104,6 @@ var app = new Vue({
             if (this.activeUser.photoURL == null) {
               this.activeUser.photoURL = '../img/profile.png'
             }
-            console.log(this.activeUser.photoURL)
           } else {
             console.log('not logged in')
             this.loginP = true

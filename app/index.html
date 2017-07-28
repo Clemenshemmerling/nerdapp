@@ -35,11 +35,11 @@
             <p class="button expanded Gm" id="gBtn" @click="Glogin">Gmail</p>
           </form>
         </div>
-        <div class="logCtn" v-show="autentificado == true">
+        <div class="logCtn" v-if="autentificado">
           <div class="row small-12 ctn align-middle align-center" id="nuevaPartida">
             <button type="button" name="button" class="button">Nueva partida</button>
           </div>
-          <div class="profileCtn">
+          <div class="profileCtn" v-show="perfil == true">
             <div class="row small-12 align-center">
               <img :src="activeUser.photoURL" alt="">
             </div>
