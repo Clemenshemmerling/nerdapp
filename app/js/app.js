@@ -101,6 +101,10 @@ var app = new Vue({
             this.loginP = false
             this.autentificado = true
             this.activeUser = firebaseUser
+            if (this.activeUser.photoURL == null) {
+              this.activeUser.photoURL = '../img/profile.png'
+            }
+            console.log(this.activeUser.photoURL)
           } else {
             console.log('not logged in')
             this.loginP = true
