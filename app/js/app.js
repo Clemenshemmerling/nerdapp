@@ -16,8 +16,8 @@ var app = new Vue({
   data: {
     loginP: true,
     autentificado: false,
-    partida: true,
-    perfil: false,
+    partida: false,
+    perfil: true,
     activeUser : null
   },
   computed: {
