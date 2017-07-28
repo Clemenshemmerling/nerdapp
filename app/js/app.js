@@ -101,7 +101,7 @@ var app = new Vue({
             this.activeUser = firebaseUser
           } else {
             console.log('not logged in')
-            this.loginP = false
+            this.loginP = true
             this.autentificado = false
             this.activeUser = null
           }

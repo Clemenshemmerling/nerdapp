@@ -2,6 +2,11 @@
   border: 1px solid #cacaca;
   padding: 1rem;
   border-radius: 0;
+  background: white;
+}
+
+#login {
+  background: #97D2C3;
 }
 
 .fb {
