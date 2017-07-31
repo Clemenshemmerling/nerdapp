@@ -40,11 +40,17 @@
             <button type="button" name="button" class="button">Nueva partida</button>
           </div>
           <div class="profileCtn" v-show="perfil == true">
-            <div class="row small-12 align-center">
-              <img :src="activeUser.photoURL" alt="">
+            <div class="row small-12 align-center profileCtnImg">
+              <img :src="activeUser.photoURL" alt="" class="profileImg">
             </div>
             <div class="row small-12 align-center">
-              <h2>{{activeUser.displayName}}</h2>  
+              <h2>{{activeUser.displayName}}</h2>
+            </div>
+            <div class="row small-12 align-center">
+              <h4>{{activeUser.email}}</h4>
+            </div>
+            <div class="row small-12 align-center">
+              <button type="button" name="button" class="button alert" @click="signOut">Logout</button>
             </div>
           </div>
           <div class="row menu align-bottom align-center small-12 menuApp">
@@ -59,7 +65,7 @@
                 <br>
                 Chat
               </a></li>
-              <li><a href="#">
+              <li><a href="#" @click="inicio">
                 <i class="fa fa-home" aria-hidden="true"></i>
                 <br>
                 Inicio
@@ -69,7 +75,7 @@
                 <br>
                 Puntajes
               </a></li>
-              <li><a href="#">
+              <li><a href="#" @click="option">
                 <i class="fa fa-bars" aria-hidden="true"></i>
                 <br>
                 Opciones

@@ -51,3 +51,12 @@
 .button:hover, .button:active {
   background: #82b5a8;
 }
+
+.profileCtnImg {
+  padding: 15px;
+}
+
+.profileImg {
+  border-radius: 50%;
+  height: 80px;
+}

@@ -16,8 +16,8 @@ var app = new Vue({
   data: {
     loginP: true,
     autentificado: false,
-    partida: false,
-    perfil: true,
+    partida: true,
+    perfil: false,
     activeUser : null
   },
   computed: {
@@ -87,7 +87,7 @@ var app = new Vue({
     signOut: function () {
       firebase.auth().signOut().then(function() {
         // Sign-out successful.
-        console.log(desconectado)
+        console.log('desconectado')
       }, function(error) {
         // An error happened.
         console.log(error)
@@ -112,8 +112,13 @@ var app = new Vue({
           }
       })
     },
-    profile: function () {
-
+    inicio: function () {
+      this.perfil = false
+      this.partida = true
+    },
+    option: function () {
+      this.perfil = true
+      this.partida = false
     }
   },
   mounted: function () {
