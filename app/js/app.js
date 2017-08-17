@@ -18,7 +18,9 @@ var app = new Vue({
     autentificado: false,
     partida: true,
     perfil: false,
-    activeUser : null
+    activeUser : null,
+    btnPartida: true,
+    selectOne: false,
   },
   computed: {
 
@@ -119,6 +121,10 @@ var app = new Vue({
     option: function () {
       this.perfil = true
       this.partida = false
+    },
+    newGame: function () {
+      this.btnPartida = false
+
     }
   },
   mounted: function () {

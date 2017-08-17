@@ -37,7 +37,12 @@
         </div>
         <div class="logCtn" v-if="autentificado">
           <div class="row small-12 ctn align-middle align-center" id="nuevaPartida" v-show="partida == true">
-            <button type="button" name="button" class="button">Nueva partida</button>
+            <div class="btnpartida" v-show="btnPartida == true">
+              <button type="button" name="button" class="button" @click="newGame">Nueva partida</button>
+            </div>
+            <div class="firstSelect" v-show="selectOne == true">
+
+            </div>
           </div>
           <div class="profileCtn" v-show="perfil == true">
             <div class="row small-12 align-center profileCtnImg">
