@@ -41,7 +41,32 @@
               <button type="button" name="button" class="button" @click="newGame">Nueva partida</button>
             </div>
             <div class="firstSelect" v-show="selectOne == true">
-
+                <div class="small-12 align-middle align-center">
+                    <div class="column small-12">
+                      <button type="button" name="button" class="button" @click="selePic">Foto</button>
+                      <button type="button" name="button" class="button" @click="seleVid">Video</button>
+                    </div>
+                </div>
+            </div>
+            <div class="videorPic" v-show="selectTwo == true">
+                <div class="vid" v-show="video == true">
+                  <div class="btnCtnVideo" v-show="btnVideo == true">
+                    <button type="button" name="button" class="button" @click="videoT">Sugerir</button>
+                    <button type="button" name="button" class="button">Seleccionar</button>
+                  </div>
+                  <div class="themVid" v-show="temaVideo == true">
+                    <input type="text" name="" value="" placeholder="sugerir tema">
+                  </div>
+                </div>
+                <div class="pic" v-show="photo == true">
+                  <div class="btnCtnPic" v-show="btnPic == true">
+                    <button type="button" name="button" class="button" @click="pictureT">Sugerir</button>
+                    <button type="button" name="button" class="button">Seleccionar</button>
+                  </div>
+                  <div class="themPic" v-show="temaPic == true">
+                    <input type="text" name="" value="" placeholder="sugerir tema">
+                  </div>
+                </div>
             </div>
           </div>
           <div class="profileCtn" v-show="perfil == true">

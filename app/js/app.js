@@ -21,6 +21,19 @@ var app = new Vue({
     activeUser : null,
     btnPartida: true,
     selectOne: false,
+    selectTwo: false,
+    photo: false,
+    video: false,
+    btnVideo: true,
+    btnPic: true,
+    temaVideo: false,
+    temaPic: false,
+    videoInfo: {
+      tema: null,
+      video: null,
+      Userid: null,
+
+    }
   },
   computed: {
 
@@ -124,8 +137,27 @@ var app = new Vue({
     },
     newGame: function () {
       this.btnPartida = false
+      this.selectOne = true
 
-    }
+    },
+    seleVid: function () {
+      this.selectTwo = true
+      this.selectOne = false
+      this.video = true
+    },
+    selePic: function () {
+      this.selectTwo = true
+      this.selectOne = false
+      this.photo = true
+    },
+    videoT: function () {
+      this.btnVideo = false
+      this.temaVideo = true
+    },
+    pictureT: function () {
+      this.btnPic = false
+      this.temaPic = true
+    },
   },
   mounted: function () {
     $(document).foundation()
