@@ -38,13 +38,14 @@
         <div class="logCtn" v-if="autentificado">
           <div class="row small-12 ctn align-middle align-center" id="nuevaPartida" v-show="partida == true">
             <div class="btnpartida" v-show="btnPartida == true">
-              <button type="button" name="button" class="button" @click="newGame">Nueva partida</button>
+              <button type="button" name="button" class="button vs" @click="newGame">VS</button>
             </div>
             <div class="firstSelect" v-show="selectOne == true">
                 <div class="small-12 align-middle align-center">
                     <div class="column small-12">
                       <button type="button" name="button" class="button" @click="selePic">Foto</button>
                       <button type="button" name="button" class="button" @click="seleVid">Video</button>
+                      <button type="button" name="button" class="button" @click="seleTxt">Texto</button>
                     </div>
                 </div>
             </div>
@@ -67,6 +68,15 @@
                     <input type="text" name="" value="" placeholder="sugerir tema">
                   </div>
                 </div>
+                <div class="txt" v-show="texto == true">
+                  <div class="btnCtnTxt" v-show="btnTxt == true">
+                    <button type="button" name="button" class="button" @click="textoT">Sugerir</button>
+                    <button type="button" name="button" class="button">Seleccionar</button>
+                  </div>
+                  <div class="themTxt" v-show="temaTxt == true">
+                    <input type="text" name="" value="" placeholder="sugerir tema">
+                  </div>
+                </div>
             </div>
           </div>
           <div class="profileCtn" v-show="perfil == true">
@@ -85,30 +95,25 @@
           </div>
           <div class="row menu align-bottom align-center small-12 menuApp">
             <ul class="menu">
-              <li><a href="#">
-                <i class="fa fa-film" aria-hidden="true"></i>
+              <li><a href="#" @click="option">
+                <i class="fa fa-bars" aria-hidden="true"></i>
                 <br>
-                Partida
+                Perfil
               </a></li>
               <li><a href="#">
                 <i class="fa fa-comments" aria-hidden="true"></i>
                 <br>
-                Chat
+                Temas
               </a></li>
               <li><a href="#" @click="inicio">
                 <i class="fa fa-home" aria-hidden="true"></i>
                 <br>
-                Inicio
+                Follow
               </a></li>
               <li><a href="#">
                 <i class="fa fa-trophy" aria-hidden="true"></i>
                 <br>
-                Puntajes
-              </a></li>
-              <li><a href="#" @click="option">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-                <br>
-                Opciones
+                Top 10
               </a></li>
             </ul>
           </div>

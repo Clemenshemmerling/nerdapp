@@ -52,11 +52,9 @@
   background: #82b5a8;
 }
 
-.profileCtnImg {
-  padding: 15px;
-}
-
-.profileImg {
+.vs {
   border-radius: 50%;
-  height: 80px;
+  padding: 40px 40px;
+  font-size: 33px;
+  font-weight: bold;
 }

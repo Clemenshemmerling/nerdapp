@@ -24,10 +24,13 @@ var app = new Vue({
     selectTwo: false,
     photo: false,
     video: false,
+    texto: false,
     btnVideo: true,
     btnPic: true,
+    btnTxt: true,
     temaVideo: false,
     temaPic: false,
+    temaTxt: false,
     videoInfo: {
       tema: null,
       video: null,
@@ -150,6 +153,11 @@ var app = new Vue({
       this.selectOne = false
       this.photo = true
     },
+    seleTxt: function () {
+      this.selectTwo = true
+      this.selectOne = false
+      this.texto = true
+    },
     videoT: function () {
       this.btnVideo = false
       this.temaVideo = true
@@ -157,6 +165,10 @@ var app = new Vue({
     pictureT: function () {
       this.btnPic = false
       this.temaPic = true
+    },
+    textoT: function () {
+      this.btnTxt = false
+      this.temaTxt = true
     },
   },
   mounted: function () {
