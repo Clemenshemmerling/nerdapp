@@ -52,8 +52,8 @@
             <div class="videorPic" v-show="selectTwo == true">
                 <div class="vid" v-show="video == true">
                   <div class="btnCtnVideo" v-show="btnVideo == true">
-                    <button type="button" name="button" class="button" @click="videoT">Sugerir</button>
-                    <button type="button" name="button" class="button">Seleccionar</button>
+                    <button type="button" name="button" class="button" @click="videoT">Batalla</button>
+                    <button type="button" name="button" class="button">Debate</button>
                   </div>
                   <div class="themVid" v-show="temaVideo == true">
                     <input type="text" name="" value="" placeholder="sugerir tema">
@@ -61,11 +61,16 @@
                 </div>
                 <div class="pic" v-show="photo == true">
                   <div class="btnCtnPic" v-show="btnPic == true">
+                    <button type="button" name="button" class="button">Batalla</button>
                     <button type="button" name="button" class="button" @click="pictureT">Sugerir</button>
                     <button type="button" name="button" class="button">Seleccionar</button>
                   </div>
                   <div class="themPic" v-show="temaPic == true">
                     <input type="text" name="" value="" placeholder="sugerir tema">
+                  </div>
+                  <div class="BatallaPic" v-show="batallaPic == true">
+                    <button type="button" name="button" class="button">Invitar amigo</button>
+                    <button type="button" name="button" class="button">Selección Random</button>
                   </div>
                 </div>
                 <div class="txt" v-show="texto == true">

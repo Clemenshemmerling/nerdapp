@@ -31,12 +31,13 @@ var app = new Vue({
     temaVideo: false,
     temaPic: false,
     temaTxt: false,
+    batallaPic: false,
     videoInfo: {
       tema: null,
       video: null,
       Userid: null,
-
-    }
+    },
+    allUsers: []
   },
   computed: {
 
@@ -119,6 +120,11 @@ var app = new Vue({
             this.loginP = false
             this.autentificado = true
             this.activeUser = firebaseUser
+            this.allUsers.push({
+              refreshToken: this.activeUser.refreshToken,
+              displayName: this.activeUser.displayName,
+              email: this.activeUser.email
+            })
             if (this.activeUser.photoURL == null) {
               this.activeUser.photoURL = '../img/profile.png'
             }
